@@ -9,7 +9,8 @@ export const programModeEnumMap = {
   PLANNED_SELF_DIRECTED: "plannedSelfDirected",
 } as const;
 
-export type IndividualProgram = unknown;
+type OmittedProgramModeEnumMap = Omit<typeof programModeEnumMap, 'GROUP' | 'ANNOUNCEMENT'>;
+export type IndividualProgram = OmittedProgramModeEnumMap[keyof OmittedProgramModeEnumMap];
 
 type tests = [
   Expect<
