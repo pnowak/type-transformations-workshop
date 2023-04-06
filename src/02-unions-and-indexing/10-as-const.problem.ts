@@ -30,3 +30,19 @@ type tests = [
   Expect<Equal<PlannedOneOnOneProgram, "planned1on1">>,
   Expect<Equal<PlannedSelfDirectedProgram, "plannedSelfDirected">>,
 ];
+
+// Object.freeze()
+// const employee = {
+//   name: "Mayank",
+//   designation: "Developer",
+//   address: {
+//     street: "Rohini",
+//     city: "Delhi",
+//   },
+// };
+//
+// const employeeFreeze = Object.freeze(employee);
+// employeeFreeze the same as -> Readonly<{name: string, designation: string, address: {street: string, city: string}}>
+
+// employeeFreeze.name = "Dummy"; // fails silently in non-strict mode
+// employeeFreeze.address.city = "Noida"; // attributes of child object can be modified
