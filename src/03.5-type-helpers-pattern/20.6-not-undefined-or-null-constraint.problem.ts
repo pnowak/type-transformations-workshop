@@ -1,4 +1,5 @@
-export type Maybe<T> = T | null | undefined;
+type PrimitiveWithoutNullish = string | number | boolean | symbol | bigint;
+export type Maybe<T extends PrimitiveWithoutNullish> = T;
 
 type tests = [
   // @ts-expect-error
